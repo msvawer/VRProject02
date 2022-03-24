@@ -1,14 +1,9 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-public class Enemy : MonoBehaviour
+
+public class Score : MonoBehaviour
 {
-    [Serializable] public class HitEvent : UnityEvent<int> { }
-
-    public HitEvent OnHit = new HitEvent();
-
-
     // Start is called before the first frame update
     void Start()
     {
