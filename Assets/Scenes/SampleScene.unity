@@ -1934,6 +1934,7 @@ GameObject:
   - component: {fileID: 1695681055}
   - component: {fileID: 1695681057}
   - component: {fileID: 1695681056}
+  - component: {fileID: 1695681058}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -2093,6 +2094,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1695681058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695681054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c7f17ddbd536d4d8d264c257dc6423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704729301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,6 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3dd66814e15b148bf63457ca3ab3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recoil: 1
   barrel: {fileID: 718827189}
   projectilePrefab: {fileID: 520999506}
 --- !u!1001 &3168842370367215603
@@ -2406,6 +2420,10 @@ PrefabInstance:
     - target: {fileID: 3168842370015561121, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_Name
       value: bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168842370015561121, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
       objectReference: {fileID: 0}
     - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_RootOrder
@@ -2450,6 +2468,10 @@ PrefabInstance:
     - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168842370015561131, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
@@ -2528,6 +2550,34 @@ PrefabInstance:
     - target: {fileID: 9086765904546340795, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1695681058}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Score, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086765904546340798, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
+      propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9086765904546340799, guid: 9191a7ae40607bf41aa36681a24eb472, type: 3}
       propertyPath: m_RootOrder

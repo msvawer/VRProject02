@@ -8,16 +8,26 @@ public class Enemy : MonoBehaviour
 
     public HitEvent OnHit = new HitEvent();
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Projectile"))
+            FigureOutScore(collision.transform.position);
+            
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FigureOutScore(Vector3 hitPosition)
     {
+        float distanceFromCenter = Vector3.Distance(transform.position, hitPosition);
+        int score = 0;
+
+        if(distanceFromCenter < 0.25f)
         
+            score = 15;
+
+            else if (distanceFromCenter < 0.5)
+                score = 5;
+
+        OnHit.Invoke(score);
     }
+
 }

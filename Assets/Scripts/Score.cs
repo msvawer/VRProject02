@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private TextMesh textMesh = null;
+
+    private void Awake()
     {
-        
+        textMesh = GetComponent<TextMesh>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowScore(int score)
     {
-        
+        textMesh.text = score.ToString();
     }
+
 }
