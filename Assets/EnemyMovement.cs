@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Spawner : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-
-    int spawnRate;
-
-    public Vector3 enemySpawnPoint;
-
+    public int enemySpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemySpeed = Random.Range(2, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Instantiate(enemyPrefab, enemySpawnPoint, Quaternion.identity);
+        this.transform.Translate(Vector3.back * Time.deltaTime * enemySpeed);
     }
 }
