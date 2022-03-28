@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour
 
     public Vector3 enemySpawnPoint;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class Spawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Instantiate(enemyPrefab, enemySpawnPoint, Quaternion.identity);
     }
