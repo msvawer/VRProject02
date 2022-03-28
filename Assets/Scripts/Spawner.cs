@@ -9,19 +9,23 @@ public class Spawner : MonoBehaviour
 
     int spawnRate;
 
-    public Vector3 enemySpawnPoint;
-
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    IEnumerator SpawnEnemies()
     {
-        Instantiate(enemyPrefab, enemySpawnPoint, Quaternion.identity);
+        while (true)
+        {
+            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(3f);
+        }
+        
     }
 }
