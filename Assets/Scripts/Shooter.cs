@@ -5,15 +5,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Shooter : MonoBehaviour
 {
+    public float recoil = 1.0f;
     public Transform barrel = null;
     public GameObject projectilePrefab = null;
 
     private XRGrabInteractable interactable = null;
 
+    private Rigidbody rigidBody = null;
 
     private void Awake()
     {
         interactable = GetComponent<XRGrabInteractable>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
@@ -31,6 +34,7 @@ public class Shooter : MonoBehaviour
     {
         CreateProjectile();
         print("Fire");
+        ApplyRecoil();
     }
 
     private void CreateProjectile()
@@ -40,5 +44,8 @@ public class Shooter : MonoBehaviour
         projectile.Launch();
     }
         
-
+    private void ApplyRecoil()
+    {
+        rigidBody.AddRelativeForce(Vector3.back * recoil, ForceMode.Impulse);
+    }
 }

@@ -2403,10 +2403,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3168842370015561120, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
-      propertyPath: launchForce
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 3168842370015561121, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_Name
       value: bullet
@@ -2414,18 +2410,6 @@ PrefabInstance:
     - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3168842370015561126, guid: 0fa9ce9fdb3c8f942bdd6f309bced2bd, type: 3}
       propertyPath: m_LocalPosition.x
