@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private TextMesh textMesh = null;
+    private TextMeshPro textMeshPro = null;
 
     private void Awake()
     {
-        textMesh = GetComponent<TextMesh>();
+        textMeshPro = GetComponent<TextMeshPro>();
     }
 
     public void ShowScore(int score)
     {
-        textMesh.text = score.ToString();
+        textMeshPro.text = score.ToString();
     }
 
 }
