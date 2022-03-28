@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-
-    int spawnRate;
-
-    
-    
+    ObjectPooler objectPooler;
 
     // Start is called before the first frame update
     void Start()
     {
+        objectPooler = ObjectPooler.Instance;
+
         StartCoroutine(SpawnEnemies());
     }
 
@@ -23,7 +20,7 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
             yield return new WaitForSeconds(3f);
         }
         

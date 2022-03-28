@@ -1113,7 +1113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbfa0ed7d448814eaa364c138d0b1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 479560528}
 --- !u!1001 &1001412789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,7 +1489,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 479560528}
-    size: 75
+    size: 5
 --- !u!4 &1418887158
 Transform:
   m_ObjectHideFlags: 0
