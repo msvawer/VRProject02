@@ -5,16 +5,35 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private TextMeshPro textMeshPro = null;
+    public static int enemyCountdown;
+    private int displayScore;
+    public TextMeshPro scoreUI;
 
-    private void Awake()
+
+    void Start()
     {
-        textMeshPro = GetComponent<TextMeshPro>();
+        enemyCountdown = 30;
+        displayScore = 30;
     }
 
-    public void ShowScore(int score)
+    void Update()
     {
-        textMeshPro.text = score.ToString();
+        if(enemyCountdown != displayScore)
+        {
+            displayScore = enemyCountdown;
+            scoreUI.text = displayScore.ToString();
+        }
     }
+
+    //  private void Awake()
+    //{
+    //     enemyCountdown = 30;
+    //    textMeshPro = GetComponent<TextMeshPro>();
+    // }
+
+    //public void ShowScore(int enemyCountdown)
+    // {
+    //     textMeshPro.text = enemyCountdown.ToString();
+    // }
 
 }

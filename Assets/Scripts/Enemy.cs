@@ -11,23 +11,18 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
-            FigureOutScore(collision.transform.position);
+           UpdateEnemyCountdown();
             
     }
 
-    private void FigureOutScore(Vector3 hitPosition)
+    private void UpdateEnemyCountdown()
     {
-        float distanceFromCenter = Vector3.Distance(transform.position, hitPosition);
-        int score = 0;
 
-        if(distanceFromCenter < 0.25f)
-        
-            score = 15;
+        int enemyCountdown = 30;
 
-            else if (distanceFromCenter < 0.5)
-                score = 5;
-
-        OnHit.Invoke(score);
+        // enemyCountdown--;
+        Score.enemyCountdown--;
+        OnHit.Invoke(enemyCountdown);
     }
 
 }
