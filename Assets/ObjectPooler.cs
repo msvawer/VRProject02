@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,9 +14,9 @@ public class ObjectPooler : MonoBehaviour
 
     }
 
+    #region
     public static ObjectPooler Instance;
 
-    #region Singleton
     private void Awake()
     {
         Instance = this;

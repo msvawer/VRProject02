@@ -7,22 +7,39 @@ public class Spawner : MonoBehaviour
 {
     ObjectPooler objectPooler;
 
+    bool _spawnEnemies = true;
+
+    public float spawnTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         objectPooler = ObjectPooler.Instance;
 
-        StartCoroutine(SpawnEnemies());
+        spawnTimer = Time.time;
+
+        //StartCoroutine(SpawnEnemies());
+    }
+
+
+    private void Update()
+    {
+        if (Time.time > spawnTimer + .1f)
+        {
+            spawnTimer = Time.time;
+            objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
-    IEnumerator SpawnEnemies()
-    {
-        while (true)
-        {
-            objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(3f);
-        }
+    //IEnumerator SpawnEnemies()
+    //{
+      //  while (_spawnEnemies == true)
+     //  {
+      //     
+            //objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
+        //    yield return new WaitForSeconds(3f);
+      //  }
         
-    }
+    //}
 }
