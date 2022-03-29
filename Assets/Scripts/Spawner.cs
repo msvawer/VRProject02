@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 {
     ObjectPooler objectPooler;
 
-    bool _spawnEnemies = true;
+    bool _spawnEnemies = false;
 
     public float spawnTime;
     public float spawnDelay;
