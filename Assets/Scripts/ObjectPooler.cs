@@ -73,5 +73,8 @@ public class ObjectPooler : MonoBehaviour
         return objectToSpawn;
     }
 
-    
+    public void DeactiveEnemy(GameObject enemy)
+    {
+        enemy.SetActive(false);
+    }
 }
