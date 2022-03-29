@@ -19,9 +19,23 @@ public class Spawner : MonoBehaviour
 
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
         
-        //StartCoroutine(SpawnEnemies());
+        
     }
 
+    private void OnEnable()
+    {
+        EventManager.OnPlanetShot += SetTrue;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnPlanetShot -= SetTrue;
+    }
+
+    public void SetTrue()
+    {
+        _spawnEnemies = true;
+    }
 
     private void SpawnObject()
     {
@@ -29,7 +43,7 @@ public class Spawner : MonoBehaviour
         {
             
            objectPooler.SpawnFromPool("Enemy", transform.position, Quaternion.identity);
-            //StartCoroutine(DelaySpawn());
+           
         }
     }
 
